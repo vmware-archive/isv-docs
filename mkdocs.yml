@@ -1,0 +1,118 @@
+# Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+# Project information
+site_name: ISV Tech Docs
+site_description: Documentation related to Pivotal ISV Partners.
+site_author: Chris Decelles
+site_url: https://decelc-pivotal.github.io/pe-docs/
+
+docs_dir: content
+
+# Repository
+#repo_name: decelc-pivotal/pe-docs
+#repo_url: https://github.com/decelc-pivotal/pe-docs
+#edit_uri: "https://github.com/decelc-pivotal/pe-docs"
+
+# Copyright
+copyright: 'ISV Tech Hub Documentation &copy; 2019'
+
+extra_css:
+  - 'stylesheets/extra.css'
+
+# Configuration
+theme:
+  name: material
+  custom_dir: theme
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  feature:
+    tabs: true
+  palette:
+    primary: black
+    accent: white
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/pivotal_favicon.ico
+  logo:
+    icon: "\uE80C"
+
+# Plugins
+plugins:
+  - search
+  #- minify:
+  #    minify_html: true
+
+# Customization
+extra:
+  social:
+    - type: github-alt
+      link: https://github.com/squidfunk
+
+# Extensions
+markdown_extensions:
+  #- markdown.extensions.admonition
+  #- markdown.extensions.codehilite:
+  #    guess_lang: false
+  #- markdown.extensions.def_list
+  #- markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  #- pymdownx.arithmatex
+#  - pymdownx.betterem:
+  #    smart_enable: all
+#  - pymdownx.caret
+#  - pymdownx.critic
+#  - pymdownx.details
+#  - pymdownx.inlinehilite
+#  - pymdownx.keys
+#  - pymdownx.magiclink:
+#      repo_url_shorthand: true
+#      user: squidfunk
+#      repo: mkdocs-material
+#  - pymdownx.mark
+#  - pymdownx.smartsymbols
+#  - pymdownx.superfences
+#  - pymdownx.tasklist:
+#      custom_checkbox: true
+#  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Home: index.md
+  - Releases:
+    - PCF 2.6 and PKS 1.5: releases/pcf2_6.md
+    - PCF 2.5 and PKS 1.4: releases/pcf2_5.md
+    - PCF 2.4 and PKS 1.3: releases/pcf2_4.md
+  - FAQs:
+    - BOSH: faqs/bosh_faq.md
+    - Tile Generator: faqs/tilegenerator_faq.md
+  - About: about.md
