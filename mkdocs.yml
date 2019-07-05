@@ -37,6 +37,8 @@ copyright: 'ISV Tech Hub Documentation &copy; 2019'
 extra_css:
   - 'stylesheets/extra.css'
 
+use_directory_urls: false
+
 # Configuration
 theme:
   name: material

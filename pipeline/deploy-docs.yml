@@ -81,7 +81,7 @@ jobs:
               }
               TOP="${PWD}"
               pushd ./isv-tech-docs
-                mkdocs build --clean
+                mkdocs build --clean --strict
                 cp -a site/. "${TOP}/isv-tech-hub-gh-pages"
               popd
               pushd ./isv-tech-hub-gh-pages
