@@ -78,7 +78,7 @@ nav:
 <a name="pipeline"></a>
 ## Pipeline
 
-The current version of this pipeline is running at https://hush-house.pivotal.io/teams/PE/pipelines/isvtechhub-deploy-docs
+The pipeline is running at https://hush-house.pivotal.io/teams/PE/pipelines/isvtechhub-deploy-docs.  It's manually triggered.
 
 It is deployed via the `pipeline/set-pipline.sh` script.
 
