@@ -61,8 +61,6 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/images/pivotal_favicon.ico
-  logo:
-    icon: "\uE80C"
 
 # Plugins
 plugins:

@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# Welcome to ISV Tech Hub Documentation
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+## What's new
 
-## Commands
+[PCF 2.6 and PKS 1.5](releases/pcf2_6/index.html).
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
 
-## Project layout
+## Sites
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+[ISV Tech Hub](https://isv-tech-hub.cfapps.io)
+
+[Partner Days](https://pivotal.io/event/partner-days)
