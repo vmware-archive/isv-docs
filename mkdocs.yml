@@ -115,4 +115,5 @@ nav:
   - FAQs:
     - BOSH: faqs/bosh_faq.md
     - Tile Generator: faqs/tilegenerator_faq.md
+    - PAS for Windows: faqs/pas_for_windows_faq.md
   - About: about.md
