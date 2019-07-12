@@ -7,12 +7,9 @@
 <a name="install"></a>
 ## Installation Steps, only if you want to run MkDocs locally.
 
-#### Fork this repo
-
-https://github.com/cf-platform-eng/isv-tech-docs  
 [Install MkDocs](#mkdocs_install)  
-[Install MkDocs Material Theme](#mkdocs_theme_install)
-
+[Install MkDocs Material Theme](#mkdocs_theme_install)  
+[Clone this repo & create your working branch](#content)  
 
 ## MkDocs
 
@@ -47,9 +44,14 @@ pip install mkdocs-material
 <a name="content"></a>
 ## Content
 
-#### Fork this this repo, if you have not already done so.
+#### Clone this repo, if you have not already done so.
 
 https://github.com/cf-platform-eng/isv-tech-docs
+
+#### Create your working branch
+The master branch is protected, so you have two possibilities: work on a branch or work with the github inline editor which will allow you to create branch + PR on save.
+
+For more complex work that needs to be saved/backed up in between we recommend to create a branch directly.
 
 #### Adding content
 
