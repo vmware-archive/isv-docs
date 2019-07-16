@@ -1,7 +1,6 @@
 #!/bin/bash
 set -eux
 DIR="$(cd "$(dirname "$0")" && pwd)"
-CONCOURSE_TARGET_NAME="PE"
 
 echo ${DIR}/deploy-docs.yml
 
