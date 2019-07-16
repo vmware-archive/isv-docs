@@ -5,7 +5,7 @@ resources:
   source:
     uri: git@github.com:cf-platform-eng/isv-tech-docs.git
     private_key: ((isv-tech-docs-deploy-key-ci))
-    branch: feature/pipeline-modification
+    branch: master
 
 - name: isv-tech-hub-gh-pages
   type: git
