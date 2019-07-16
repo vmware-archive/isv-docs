@@ -67,6 +67,7 @@ theme:
 # Plugins
 plugins:
   - search
+  - awesome-pages
   #- minify:
   #    minify_html: true
 
@@ -78,7 +79,7 @@ extra:
 
 # Extensions
 markdown_extensions:
-  #- markdown.extensions.admonition
+  - markdown.extensions.admonition
   #- markdown.extensions.codehilite:
   #    guess_lang: false
   #- markdown.extensions.def_list
@@ -106,14 +107,5 @@ markdown_extensions:
 #  - pymdownx.tilde
 
 # Page tree
-nav:
-  - Home: index.md
-  - Releases:
-    - PCF 2.6 and PKS 1.5: releases/pcf2_6.md
-    - PCF 2.5 and PKS 1.4: releases/pcf2_5.md
-    - PCF 2.4 and PKS 1.3: releases/pcf2_4.md
-  - FAQs:
-    - BOSH: faqs/bosh_faq.md
-    - Tile Generator: faqs/tilegenerator_faq.md
-    - PAS for Windows: faqs/pas_for_windows_faq.md
-  - About: about.md
+# nav: is configured by awesome pages plugin
+

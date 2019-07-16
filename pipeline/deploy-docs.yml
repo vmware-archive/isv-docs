@@ -14,62 +14,56 @@ resources:
     private_key: ((isv-tech-hub-deploy-key-ci))
     branch: gh-pages
 
+
 jobs:
   - name: deploy-isv-tech-docs
+    build_log_retention:
+        builds: 10
     plan:
     - in_parallel:
       - get: isv-tech-hub-gh-pages
       - get: isv-tech-docs
         trigger: true
+
     - do:
-      - task: docs-collect
+      - task: build-mkdocs
+        input_mapping:
+          mkdocs-in: isv-tech-docs
         config:
           inputs:
-            - name: isv-tech-hub-gh-pages
-            - name: isv-tech-docs
+            - name: mkdocs-in
           outputs:
-            - name: isv-tech-docs
+            - name: mkdocs-site-out
           platform: linux
           image_resource:
             type: registry-image
-            source: { repository: cfinfrastructure/mkdocs }
+            source:
+              repository: dherbrich/mkdocs-material-awesome-pages
+              tag: 0.1.0
           run:
-            path: /bin/bash
+            path: /bin/sh
             args:
-            - -exc
-            - |
-              function collect_docs() {
-                org_repo=$1
-                has_readme=$2 || ''
-                repo=$(echo $org_repo | awk -F '/' '{print $2}')
+              - -exc
+              - |
+                 mkdocs build -f "${PWD}/mkdocs-in/mkdocs.yml" -d "${PWD}/mkdocs-site-out"
 
-                mkdir -p "./isv-tech-hub-docs/docs/${org_repo}"
-
-                if [ "$has_readme" == "readme" ]; then
-                  cp ./source-${repo}/README.md ./toolsmiths-docs/docs/${org_repo}/readme.md
-                fi
-
-                for file in $(ls "./source-${repo}/docs") ; do
-                  renamed_file=$(echo $file | tr [A-Z] [a-z] | sed 's/_/-/g')
-                  cp "./source-${repo}/docs/${file}" "./toolsmiths-docs/docs/${org_repo}/${renamed_file}"
-                done
-              }
-
-              ls -al isv-tech-docs
-
-      - task: build-and-deploy
+      - task: deploy-isv-tech-hub-ghpages
+        input_mapping:
+          mkdocs-site-in: mkdocs-site-out
         config:
           inputs:
-            - name: isv-tech-docs
+            - name: mkdocs-site-in
             - name: isv-tech-hub-gh-pages
           outputs:
             - name: isv-tech-hub-gh-pages
           platform: linux
           image_resource:
             type: registry-image
-            source: { repository: cfinfrastructure/mkdocs }
+            source: 
+              repository: alpine/git
+              tag: latest
           run:
-            path: /bin/bash
+            path: /bin/sh
             args:
             - -exc
             - |
@@ -79,20 +73,15 @@ jobs:
                 git config --global user.name ISVTechHubCI
                 git commit -am"$1" || true ;
               }
-              TOP="${PWD}"
-              pushd ./isv-tech-docs
-                mkdocs build --clean --strict
-                cp -a site/. "${TOP}/isv-tech-hub-gh-pages"
-              popd
-              pushd ./isv-tech-hub-gh-pages
+                ls -alh isv-tech-hub-gh-pages
+                cp -a ./mkdocs-site-in/. ./isv-tech-hub-gh-pages
+
+              cd ./isv-tech-hub-gh-pages
                 ls -al
                 git status
                 check_in ":whale: Update ISV Tech Hub Docs"
                 git status
-              popd
-
-              ls -al ./isv-tech-hub-gh-pages
-
+              
         on_success:
           put: isv-tech-hub-gh-pages
           params: {rebase: true, force: true, repository: isv-tech-hub-gh-pages }
