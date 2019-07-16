@@ -67,6 +67,7 @@ theme:
 # Plugins
 plugins:
   - search
+  - awesome-pages
   #- minify:
   #    minify_html: true
 
@@ -78,7 +79,7 @@ extra:
 
 # Extensions
 markdown_extensions:
-  #- markdown.extensions.admonition
+  - markdown.extensions.admonition
   #- markdown.extensions.codehilite:
   #    guess_lang: false
   #- markdown.extensions.def_list
