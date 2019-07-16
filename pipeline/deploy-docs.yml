@@ -5,7 +5,7 @@ resources:
   source:
     uri: git@github.com:cf-platform-eng/isv-tech-docs.git
     private_key: ((isv-tech-docs-deploy-key-ci))
-    branch: master
+    branch: feature/pipeline-modification
 
 - name: isv-tech-hub-gh-pages
   type: git
@@ -13,6 +13,7 @@ resources:
     uri: git@github.com:cf-platform-eng/isv-tech-hub.git
     private_key: ((isv-tech-hub-deploy-key-ci))
     branch: gh-pages
+
 
 jobs:
   - name: deploy-isv-tech-docs
@@ -23,6 +24,7 @@ jobs:
       - get: isv-tech-hub-gh-pages
       - get: isv-tech-docs
         trigger: true
+
     - do:
       - task: build-mkdocs
         input_mapping:
@@ -80,7 +82,6 @@ jobs:
                 check_in ":whale: Update ISV Tech Hub Docs"
                 git status
               
-
-        # on_success:
-        #   put: isv-tech-hub-gh-pages
-        #   params: {rebase: true, force: true, repository: isv-tech-hub-gh-pages }
+        on_success:
+          put: isv-tech-hub-gh-pages
+          params: {rebase: true, force: true, repository: isv-tech-hub-gh-pages }
