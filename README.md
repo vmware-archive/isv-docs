@@ -91,3 +91,5 @@ The docs are hosted here, deployed by the job `build-and-deploy` of the pipeline
 This is enabled by turning on `GitHub Pages` settings for the `https://github.com/cf-platform-eng/isv-tech-hub` repo, the branch `gh-pages` is where the pipeline pushes the content to.
 
 View the ISV Tech Hub documentation here - https://cf-platform-eng.github.io/isv-tech-hub
+
+**To use the set-pipeline.sh to set the pipeline you are expected to have the environment variable `CONCOURSE_TARGET_NAME` set which is the name of your "fly target". It could easily go into an `.envrc`file using direnv so you have per project control over your fly target.**
