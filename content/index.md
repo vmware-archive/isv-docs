@@ -1,5 +1,5 @@
 # Welcome to ISV Tech Hub Documentation
-test
+
 ## What's new
 
 [PCF 2.6 and PKS 1.5](./releases/pcf2_6.md).
