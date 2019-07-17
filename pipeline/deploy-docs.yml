@@ -67,17 +67,17 @@ jobs:
             args:
             - -exc
             - |
-              function check_in() {
-                git add .
-                git config --global user.email cf-platform-eng+ci@pivotal.io
-                git config --global user.name ISVTechHubCI
-                git commit -am"$1" || true ;
-              }
-                ls -alh isv-tech-hub-gh-pages
+                function check_in() {
+                  git add .
+                  git config --global user.email cf-platform-eng+ci@pivotal.io
+                  git config --global user.name ISVTechHubCI
+                  git commit -am"$1" || true ;
+                }
+                
+                rm -rf ./isv-tech-hub-gh-pages/*
                 cp -a ./mkdocs-site-in/. ./isv-tech-hub-gh-pages
 
-              cd ./isv-tech-hub-gh-pages
-                ls -al
+                cd ./isv-tech-hub-gh-pages
                 git status
                 check_in ":whale: Update ISV Tech Hub Docs"
                 git status
