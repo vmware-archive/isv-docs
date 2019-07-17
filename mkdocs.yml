@@ -22,14 +22,9 @@
 site_name: ISV Tech Docs
 site_description: Documentation related to Pivotal ISV Partners.
 site_author: Chris Decelles
-site_url: https://decelc-pivotal.github.io/pe-docs/
+site_url: https://cf-platform-eng.github.io/isv-tech-hub/
 
 docs_dir: content
-
-# Repository
-#repo_name: decelc-pivotal/pe-docs
-#repo_url: https://github.com/decelc-pivotal/pe-docs
-#edit_uri: "https://github.com/decelc-pivotal/pe-docs"
 
 # Copyright
 copyright: 'ISV Tech Hub Documentation &copy; 2019'
@@ -71,11 +66,7 @@ plugins:
   #- minify:
   #    minify_html: true
 
-# Customization
-extra:
-  social:
-    - type: github-alt
-      link: https://github.com/squidfunk
+
 
 # Extensions
 markdown_extensions:
