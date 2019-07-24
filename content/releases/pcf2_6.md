@@ -1,3 +1,5 @@
+# PCF 2.6 / PKS 1.5
+
 Hello Pivotal Partners,
 
 *   PCF 2.6 is scheduled for release in June
@@ -7,11 +9,11 @@ With this release, we have a handful of changes that require attention from tile
 
 PAS releases 2.3 will move to End of General Support (EOGS) with this release.
 
-# PCF 2.6 Changes
+## PCF 2.6 Changes
 
-## New GA Features
+### New GA Features
 
-### Ops Manager
+#### Ops Manager
 
 *   **[New Feature]**: BPM support in bosh, available in this Ops Manager.
 *   **[New Feature]**: Drain Lifecycle updates to help improve deployment orchestration.
@@ -19,20 +21,20 @@ PAS releases 2.3 will move to End of General Support (EOGS) with this release.
 *   **[New Feature]**: Ops Manager API users can now call an endpoint to receive a list of required fields for product configuration.
 *   **[New Feature]: **Multiple stemcells per tile is now possible, _however, Tile Generator does not yet support this._
 
-### PAS
+#### PAS
 
-## Beta Features
+### Beta Features
 
 *   App Developers can easily rollback to an app revision from a specific point in time.
 *   Operators can now obtain additional IAAS VM metrics via the Loggregator Firehose.
 *   App Operators can set up more than 10k syslog drains.
 *   Sidecar support for Diego Cell based applications.  [See CF Blog](https://www.cloudfoundry.org/blog/how-to-push-an-app-to-cloud-foundry-with-sidecars/).
 
-## ODB SDK Changes
+### ODB SDK Changes
 
 The latest version of the [ODB SDK (v0.29.1)](https://github.com/pivotal-cf/on-demand-service-broker-release/releases/tag/v0.29.1) has been released.  
 
-### ODB SDK Recreate All Services Instances Errand
+#### ODB SDK Recreate All Services Instances Errand
 
 When an Ops Manager root CA is rotated and new non-configurable certificates are generated, OpsManager can force a recreate of BOSH VMs so that they will contain the new root CA. However, it has no knowledge of VMs created by On-Demand Brokers.
 
@@ -40,17 +42,17 @@ In order to recreate these Service Instance VMs behind On-Demand Brokers, it was
 
 If you are running on an older release of the ODB SDK, please upgrade to the latest release to take advantage of these features.
 
-## Upcoming Deprecations
+### Upcoming Deprecations
 
-### Upgrade Spring Boot 1.0 App Brokers to Spring Boot 2.0 {#upgrade-spring-boot-1-0-app-brokers-to-spring-boot-2-0}
+#### Upgrade Spring Boot 1.0 App Brokers to Spring Boot 2.0 {#upgrade-spring-boot-1-0-app-brokers-to-spring-boot-2-0}
 
 [Spring Boot 1.0 EOL is coming August 1, 2019](https://spring.io/blog/2018/07/30/spring-boot-1-x-eol-aug-1st-2019).  Any apps or app brokers should be updated to Spring Boot 2.0 to stay current with security patches and general support by the Spring Team.
 
-### Metron Agent Eventually Going Away
+#### Metron Agent Eventually Going Away
 
 The loggregator-agent release is the new drop-in replacement to replace metron.  In PAS 2.5, metron agent will disappear and you will have to update your BOSH manifest to use the [loggregator-agent release](https://bosh.io/releases/github.com/cloudfoundry/loggregator-agent-release?all=1) instead.
 
-### Use UAA Client Credentials Instead of Admin Users
+#### Use UAA Client Credentials Instead of Admin Users
 
 The introduction of `cf auth --client-credentials` allows components using `cloud_controller.admin` to leverage a client instead of a user. PCF 2.5 will include a set of `tile_installer_client` credentials to bootstrap client credentials for long-term use, instead of using shared admin-level credentials.
 
@@ -58,8 +60,7 @@ The benefits of this include supporting customers who need to use two-factor aut
 
 As the details of this develop, we plan to enhance Tile Generator to help make this process smoother. In the meantime, if you would like more information, please reach out to us in Pivotal Partners Slack.
 
-
-# PKS 1.5 Changes
+## PKS 1.5 Changes
 
 PKS is scheduled for release in July 2019.
 
@@ -89,12 +90,12 @@ Conformance
 
 Kubernetes V1.14.x
 
-# Other Pivotal Product Announcements
+## Other Pivotal Product Announcements
 
 *   Concourse 5.1 released as GA
 *   Spring Boot 1.0 will be [deprecated](https://spring.io/blog/2018/07/30/spring-boot-1-x-eol-aug-1st-2019) August 1, 2019
 
-# Questions?
+## Questions?
 
 Reach out to us on the Pivotal Partner Slack Team
 
