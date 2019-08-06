@@ -19,15 +19,15 @@
 # IN THE SOFTWARE.
 
 # Project information
-site_name: ISV Tech Docs
+site_name: ISV Docs
 site_description: Documentation related to Pivotal ISV Partners.
-site_author: Chris Decelles
-site_url: https://cf-platform-eng.github.io/isv-tech-hub/
+site_author: Platform Engineering
+site_url: https://cf-platform-eng.github.io/isv-docs/
 
 docs_dir: content
 
 # Copyright
-copyright: 'ISV Tech Hub Documentation &copy; 2019'
+copyright: 'ISV Documentation &copy; 2019'
 
 extra_css:
   - 'stylesheets/extra.css'

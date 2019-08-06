@@ -1,4 +1,4 @@
-# ISV Tech Docs
+# ISV Docs
 
 [Adding Content](#content)  
 [Running and Testing](#running)
@@ -32,16 +32,16 @@ Ensure that you have `docker` installed an use the `serve.sh` script to build an
 <a name="pipeline"></a>
 ## Pipeline
 
-The pipeline is running at https://hush-house.pivotal.io/teams/PE/pipelines/isvtechhub-deploy-docs.  It's manually triggered.
+The pipeline is running at https://hush-house.pivotal.io/teams/PE/pipelines/isv-docs-deploy.  It's manually triggered.
 
 It is deployed via the `pipeline/set-pipline.sh` script.
 
-The current iteration of this pipline builds the doc from one repistory (isv-tech-docs), the ability to build from multiple repistory can be done in the `collect_docs()` function in the job `deploy-isv-tech-docs`
+The current iteration of this pipline builds the doc from one repistory (isv-docs), the ability to build from multiple repistory can be done in the `collect_docs()` function in the job `deploy-isv-docs`
 
-The docs are hosted here, deployed by the job `build-and-deploy` of the pipeline - https://cf-platform-eng.github.io/isv-tech-hub/
+The docs are hosted here, deployed by the job `build-and-deploy` of the pipeline - https://cf-platform-eng.github.io/isv-hub/
 
-This is enabled by turning on `GitHub Pages` settings for the `https://github.com/cf-platform-eng/isv-tech-hub` repo, the branch `gh-pages` is where the pipeline pushes the content to.
+This is enabled by turning on `GitHub Pages` settings for the `https://github.com/cf-platform-eng/isv-hub` repo, the branch `gh-pages` is where the pipeline pushes the content to.
 
-View the ISV Tech Hub documentation here - https://cf-platform-eng.github.io/isv-tech-hub
+View the ISV documentation here - https://cf-platform-eng.github.io/isv-docs
 
 **To use the set-pipeline.sh to set the pipeline you are expected to have the environment variable `CONCOURSE_TARGET_NAME` set which is the name of your "fly target". It could easily go into an `.envrc`file using direnv so you have per project control over your fly target.**
