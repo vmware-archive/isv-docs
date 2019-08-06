@@ -1,52 +1,15 @@
 # ISV Tech Docs
 
-[Installation](#install)  
 [Adding Content](#content)  
+[Running and Testing](#running)
 [Pipeline](#pipeline)  
-
-<a name="install"></a>
-## Installation Steps, only if you want to run MkDocs locally.
-
-[Install MkDocs](#mkdocs_install)  
-[Install MkDocs Material Theme](#mkdocs_theme_install)  
-[Clone this repo & create your working branch](#content)  
-
-## MkDocs
-
-MkDocs is a tool to create a static site from markdown.  You can read more here - [MkDocs](https://www.mkdocs.org/)
-
-Configuration is done via `mkdocs.yml`
-
-<a name="mkdocs_install"></a>
-[MkDocs Installation](https://www.mkdocs.org/#installing-mkdocs)
-
-**!Important** - install using pip and not `homebrew`, [issues](https://squidfunk.github.io/mkdocs-material/getting-started/#troubleshooting) with custom themes will occur
-
-```bash
-pip install mkdocs && mkdocs --version
-```
-
-Verify that the version of MkDocs >= 0.17.1 (required for MkDocs Material theme)
-
-## MkDocs Material Theme
-
-Material for MkDocs is a custom theme used for ISV Tech Hub documentation. You can read more - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-
-The theme is easily customizable by extending elements [Extending the Theme](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme) , which is done in `theme` directory of this repository.
-
-<a name="mkdocs_theme_install"></a>
-[MkDocs Material Theme Installation](https://squidfunk.github.io/mkdocs-material/getting-started/)
-
-```bash
-pip install mkdocs-material
-```
 
 <a name="content"></a>
 ## Content
 
 #### Clone this repo, if you have not already done so.
 
-https://github.com/cf-platform-eng/isv-tech-docs
+https://github.com/cf-platform-eng/isv-docs
 
 #### Create your working branch
 The master branch is protected, so you have two possibilities: work on a branch or work with the github inline editor which will allow you to create branch + PR on save.
@@ -57,25 +20,14 @@ For more complex work that needs to be saved/backed up in between we recommend t
 
 All content is located in the `content` directory.  [GitLab Markdown Guide](https://about.gitlab.com/handbook/product/technical-writing/markdown-guide/)
 
-#### Add to the top level menu
+#### The top level menu
 
-If you need to add to the top level menu, it's needs to be added to `mkdocs.yml`
+The `awesome-pages` plugin for mkdoc will automatically add the page to the top level. See [Awesome Pages Plugin Github Repo](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) for more information.
 
-Here's the current structure of the menu
+<a name="running"></a>
+## Running and testing
 
-```
-# Page tree
-nav:
-  - Home: index.md
-  - Releases:
-    - PCF 2.6 and PKS 1.5: releases/pcf2_6.md
-    - PCF 2.5 and PKS 1.4: releases/pcf2_5.md
-    - PCF 2.4 and PKS 1.3: releases/pcf2_4.md
-  - FAQs:
-    - BOSH: faqs/bosh_faq.md
-    - Tile Generator: faqs/tilegenerator_faq.md
-  - About: about.md
-```
+Ensure that you have `docker` installed an use the `serve.sh` script to build and run the server locally. It will be served at `http://0.0.0.0:8000`
 
 <a name="pipeline"></a>
 ## Pipeline
