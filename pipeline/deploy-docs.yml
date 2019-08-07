@@ -1,34 +1,34 @@
 ---
 resources:
-- name: isv-tech-docs
+- name: isv-docs-master
   type: git
   source:
-    uri: git@github.com:cf-platform-eng/isv-tech-docs.git
-    private_key: ((isv-tech-docs-deploy-key-ci))
+    uri: git@github.com:cf-platform-eng/isv-docs.git
+    private_key: ((isv-docs-deploy-key-ci))
     branch: master
 
-- name: isv-tech-hub-gh-pages
+- name: isv-docs-gh-pages
   type: git
   source:
-    uri: git@github.com:cf-platform-eng/isv-tech-hub.git
-    private_key: ((isv-tech-hub-deploy-key-ci))
+    uri: git@github.com:cf-platform-eng/isv-docs.git
+    private_key: ((isv-docs-deploy-key-ci))
     branch: gh-pages
 
 
 jobs:
-  - name: deploy-isv-tech-docs
+  - name: deploy-isv-docs
     build_log_retention:
         builds: 10
     plan:
     - in_parallel:
-      - get: isv-tech-hub-gh-pages
-      - get: isv-tech-docs
+      - get: isv-docs-gh-pages
+      - get: isv-docs-master
         trigger: true
 
     - do:
       - task: build-mkdocs
         input_mapping:
-          mkdocs-in: isv-tech-docs
+          mkdocs-in: isv-docs-master
         config:
           inputs:
             - name: mkdocs-in
@@ -53,9 +53,9 @@ jobs:
         config:
           inputs:
             - name: mkdocs-site-in
-            - name: isv-tech-hub-gh-pages
+            - name: isv-docs-gh-pages
           outputs:
-            - name: isv-tech-hub-gh-pages
+            - name: isv-docs-gh-pages
           platform: linux
           image_resource:
             type: registry-image
@@ -74,14 +74,14 @@ jobs:
                   git commit -am"$1" || true ;
                 }
                 
-                rm -rf ./isv-tech-hub-gh-pages/*
-                cp -a ./mkdocs-site-in/. ./isv-tech-hub-gh-pages
+                rm -rf ./isv-docs-gh-pages/*
+                cp -a ./mkdocs-site-in/. ./isv-docs-gh-pages
 
-                cd ./isv-tech-hub-gh-pages
+                cd ./isv-docs-gh-pages
                 git status
                 check_in ":whale: Update ISV Tech Hub Docs"
                 git status
               
         on_success:
-          put: isv-tech-hub-gh-pages
-          params: {rebase: true, force: true, repository: isv-tech-hub-gh-pages }
+          put: isv-docs-gh-pages
+          params: {rebase: true, force: true, repository: isv-docs-gh-pages }
