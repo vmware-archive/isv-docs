@@ -9,3 +9,5 @@
 [data-md-color-primary=black] .md-search__input {
     background-color: gray;
 }
+
+.fwd-looking-stmt { font-size:0.9em; }
