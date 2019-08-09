@@ -14,7 +14,7 @@ PCF 2.4 release will move to End of General Support (EOGS) once PCF 2.7 is relea
 
 #### Ops Manager
 
-* **[New Feature]**: BPM support in bosh, available in this Ops Manager.
+* **[New Feature]**: BPM support in BOSH, available in this Ops Manager.
 * **[New Feature]**: A user is able to see information for stemcells in the Pending Changes API
   * Display all of the stemcell OS/Version information without keeping the existing stemcell_version key in a public-facing API
 * **[New Feature]**: Pivotal tiles present platform operators with a consistent syslog configuration form
