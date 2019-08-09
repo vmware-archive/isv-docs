@@ -26,6 +26,11 @@ site_url: https://cf-platform-eng.github.io/isv-docs/
 
 docs_dir: content
 
+# Repository
+repo_name: cf-platform-eng/isv-docs
+repo_url: https://github.com/cf-platform-eng/isv-docs
+edit_uri: edit/master/content/
+
 # Copyright
 copyright: 'ISV Documentation &copy; 2019'
 
