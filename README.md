@@ -9,11 +9,18 @@ View the ISV documentation here - https://cf-platform-eng.github.io/isv-docs
 <a name="content"></a>
 ## Content
 
+### Use GitHub to add / edit files
+
+OR 
+
+### To work locally
+
 #### Clone this repo, if you have not already done so.
 
 https://github.com/cf-platform-eng/isv-docs
 
 #### Create your working branch
+
 The master branch is protected, so you have two possibilities: work on a branch or work with the github inline editor which will allow you to create branch + PR on save.
 
 For more complex work that needs to be saved/backed up in between we recommend to create a branch directly.
@@ -25,6 +32,11 @@ All content is located in the `content` directory.  [GitLab Markdown Guide](http
 #### The top level menu
 
 The `awesome-pages` plugin for mkdoc will automatically add the page to the top level. See [Awesome Pages Plugin Github Repo](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) for more information.
+
+### Converting Google Docs
+
+If you have existing documentation in Google Docs,  get the *Docs to Markdown* Add-On to easily convert it.
+<img src="img/docs-to-markdown.png" alt="Docs to Markdown Image" width="70%" heigh="70%" />
 
 <a name="running"></a>
 ## Running and testing
