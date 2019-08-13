@@ -1,5 +1,7 @@
 # ISV Docs
 
+View the ISV documentation here - https://cf-platform-eng.github.io/isv-docs
+
 [Adding Content](#content)  
 [Running and Testing](#running)
 [Pipeline](#pipeline)  
@@ -38,10 +40,6 @@ It is deployed via the `pipeline/set-pipline.sh` script.
 
 The current iteration of this pipline builds the doc from one repistory (isv-docs), the ability to build from multiple repistory can be done in the `collect_docs()` function in the job `deploy-isv-docs`
 
-The docs are hosted here, deployed by the job `build-and-deploy` of the pipeline - https://cf-platform-eng.github.io/isv-hub/
-
-This is enabled by turning on `GitHub Pages` settings for the `https://github.com/cf-platform-eng/isv-hub` repo, the branch `gh-pages` is where the pipeline pushes the content to.
-
-View the ISV documentation here - https://cf-platform-eng.github.io/isv-docs
+The docs are hosted here, deployed by the job `build-and-deploy` which creates the html and publishes it to the branch `gh-pages` which is configured for GitHub Pages.
 
 **To use the set-pipeline.sh to set the pipeline you are expected to have the environment variable `CONCOURSE_TARGET_NAME` set which is the name of your "fly target". It could easily go into an `.envrc`file using direnv so you have per project control over your fly target.**
