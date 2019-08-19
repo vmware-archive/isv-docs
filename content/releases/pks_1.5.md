@@ -1,11 +1,10 @@
+# PKS 1.5
 
 PKS 1.5 is scheduled for release in late August. With this release, we have a handful of changes to share with you:
-
 
 ## Features
 
 New features and changes in this release:
-
 
 *   Cluster administrators and managers can use the PKS CLI command `pks cluster CLUSTER-NAME --details` to view details about the named cluster, including Kubernetes nodes and NSX-T network details.
 *   Cluster administrators can define a network profile to use a third-party load balancer for Kubernetes services of type LoadBalancer. 
@@ -23,34 +22,30 @@ New features and changes in this release:
 *   VMware’s Customer Experience Improvement Program (CEIP) and the Pivotal Telemetry Program (Telemetry) are now enabled in Enterprise PKS by default. This includes both new installations and upgrades.
 *   Enterprise PKS adds VMware Enterprise PKS Management Console that provides a graphical interface for deploying Enterprise PKS on vSphere.
 
-Breaking Changes \
-Enterprise PKS v1.5.0 has the following breaking changes:
+## Breaking Changes
 
+Enterprise PKS v1.5.0 has the following breaking changes:
 
 ### New OIDC Prefixes Break Existing Cluster Role Bindings: \
 In Enterprise PKS v1.5, operators can configure prefixes for OIDC usernames and groups. If you add OIDC prefixes you must manually change any existing role bindings that bind to a username or group. If you do not change your role bindings, developers cannot access Kubernetes clusters
-
 
 ### New API Group Name for Sink Resources:
 
 The `apps.pivotal.io` API group name for sink resources is no longer supported. The new API group name is `pksapi.io`.
 
-When creating a sink resource, your sink resource YAML definition must start with `apiVersion: pksapi.io/v1beta1`. All existing sinks are migrated automatically. \
+When creating a sink resource, your sink resource YAML definition must start with `apiVersion: pksapi.io/v1beta1`. All existing sinks are migrated automatically.
 
+### Log Sink Changes
 
-
-### Log Sink Changes \
 Enterprise PKS v1.5.0 adds the following log sink changes:
 
-
-
 *   The `ClusterSink` log sink resource has been renamed to `ClusterLogSink` and the `Sink` log sink resource has been renamed to `LogSink`.
-    *   When you create a log sink resource with YAML, you must use one of the new names in your sink resource YAML definition. For example, specify `kind: ClusterLogSink` to define a cluster log sink. All existing sinks are migrated automatically.
-    *   When managing your log sink resources through kubectl, you must use the new log sink resource names. For example, if you want to delete a cluster log sink, run `kubectl delete clusterlogsink `instead of `kubectl delete clustersink`.
+*   When you create a log sink resource with YAML, you must use one of the new names in your sink resource YAML definition. For example, specify `kind: ClusterLogSink` to define a cluster log sink. All existing sinks are migrated automatically.
+*   When managing your log sink resources through kubectl, you must use the new log sink resource names. For example, if you want to delete a cluster log sink, run `kubectl delete clusterlogsink `instead of `kubectl delete clustersink`.
 *   Log transport now requires a secure connection. When creating a `ClusterLogSink` or `LogSink`resource, you must include `enable_tls: true` in your sink resource YAML definition. All existing sinks are migrated automatically.
 
+## Kubernetes versioning:
 
-## Kubernetes versioning: \
 PKS 1.5 is based on [Kubernetes 1.14.5](https://v1-14.docs.kubernetes.io) if you would to refer to those release notes as well.
 
 **Forward Looking Statement.**
