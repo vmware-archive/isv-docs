@@ -16,5 +16,3 @@
 ## Contact Us
 
 [ISV-TPM@pivotal.io](mailto:ISV-TPM@pivotal.io)
-
-[Pivotal Partners Slack](https://pivotalpartners.slack.com)
