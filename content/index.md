@@ -3,6 +3,7 @@
 
 ## What's new
 
+[PKS 1.5](./releases/pks1_5.md)
 [PCF 2.7](./releases/pcf2_7.md)
 
 ## Sites
