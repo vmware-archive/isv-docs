@@ -6,9 +6,9 @@
 
 [Creating UAA Clients for BOSH Director](https://docs.pivotal.io/pivotalcf/2-6/customizing/opsmanager-create-bosh-client.html)
 
-[BOSH Managing Permissions with UAA Scopes](https://bosh.io/docs/director-users-uaa-scopes/#top-level-scopes)
+[Managing Permissions with UAA Scopes](https://bosh.io/docs/director-users-uaa-scopes/#top-level-scopes)
 
-[BOSH Director HTTP API](https://bosh.io/docs/director-api-v1/)
+[Director HTTP API](https://bosh.io/docs/director-api-v1/)
 
 ### CF
 
