@@ -1,30 +1,8 @@
-# PAS for Windows FAQ
+# PAS for Windows
 
 ## General Documentation
 
 [Pivotal Application Service for Windows](https://docs.pivotal.io/pivotalcf/current/windows/index.html)
-
-## Troubleshooting
-
-### Issue: Install fails with 'Write failed tar: Error...'
-
-**PAS for Windows** requires more resources than BOSH is granted by default. To provide adequate resources:
-
-1. Login to **Ops Manager** .
-2. Click the **Bosh Director for GCP** tile.
-3. Scroll down to **Resource Config**.  
-4. Verify that **Master Compilation Job** to `xlarge.disk( cpu: 4, ram: 16 GB, disk: 128 GB)`.
-
-#### Sample error
-
-```bash
-Task 435 | 17:27:58 | Error: Action Failed get_task: Task 
-...
-Running command: 'tar --no-same-owner -xzf C:\var\vcap\data\tmp\bosh-blobstore-externalBlobstore-Get558405054 -C \var\vcap\data\compile/windows2019fs-bosh-agent-unpack'
-, stdout: ''
-, stderr: './windows2019fs/windows2016fs-2019.0.15.tgz: 
-Write failed tar: Error exit delayed from previous errors.'
-```
 
 ## Tips and Tricks
 
@@ -65,3 +43,25 @@ Installing PAS for Windows requires downloading and uploading several GB of file
 9. Continue on with [Step 3: Configure the Tile](https://docs.pivotal.io/pivotalcf/current/windows/installing.html#config)
    1. At [Step 5: Upload a Stemcell](https://docs.pivotal.io/pivotalcf/current/windows/installing.html#stemcells) go to [Pivotal Network: Stemcells for PCF (Windows)](https://network.pivotal.io/products/stemcells-windows-server) and download the light stemcell required.
        - For most shared partner environments the **GCP light Stemcell**
+
+## Troubleshooting
+
+### Issue: Install fails with 'Write failed tar: Error...'
+
+**PAS for Windows** requires more resources than BOSH is granted by default. To provide adequate resources:
+
+1. Login to **Ops Manager** .
+2. Click the **Bosh Director for GCP** tile.
+3. Scroll down to **Resource Config**.  
+4. Verify that **Master Compilation Job** to `xlarge.disk( cpu: 4, ram: 16 GB, disk: 128 GB)`.
+
+#### Sample error
+
+```bash
+Task 435 | 17:27:58 | Error: Action Failed get_task: Task 
+...
+Running command: 'tar --no-same-owner -xzf C:\var\vcap\data\tmp\bosh-blobstore-externalBlobstore-Get558405054 -C \var\vcap\data\compile/windows2019fs-bosh-agent-unpack'
+, stdout: ''
+, stderr: './windows2019fs/windows2016fs-2019.0.15.tgz: 
+Write failed tar: Error exit delayed from previous errors.'
+```
