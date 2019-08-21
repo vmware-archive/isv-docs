@@ -2,7 +2,7 @@
 
 PKS 1.5 is scheduled for release in late August. With this release, we have a handful of changes to share with you:
 
-## Features
+## New Features
 
 New features and changes in this release:
 
@@ -44,7 +44,7 @@ Enterprise PKS v1.5.0 adds the following log sink changes:
 * When managing your log sink resources through kubectl, you must use the new log sink resource names. For example, if you want to delete a cluster log sink, run `kubectl delete clusterlogsink `instead of `kubectl delete clustersink`.
 * Log transport now requires a secure connection. When creating a `ClusterLogSink` or `LogSink`resource, you must include `enable_tls: true` in your sink resource YAML definition. All existing sinks are migrated automatically.
 
-## Kubernetes versioning
+## Kubernetes Version
 
 PKS 1.5 is based on [Kubernetes 1.14.5](https://v1-14.docs.kubernetes.io).
 
