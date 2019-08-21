@@ -3,6 +3,8 @@
 
 ## What's new
 
+[PKS 1.5](./releases/pks1_5.md)
+
 [PCF 2.7](./releases/pcf2_7.md)
 
 ## Sites
@@ -14,5 +16,3 @@
 ## Contact Us
 
 [ISV-TPM@pivotal.io](mailto:ISV-TPM@pivotal.io)
-
-[Pivotal Partners Slack](https://pivotalpartners.slack.com)
