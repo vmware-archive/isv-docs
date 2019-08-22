@@ -2,13 +2,13 @@
 
 ## Overview
 
-By default external [TCP Routing](https://docs.pivotal.io/pivotalcf/opsguide/tcp-routing-ert-config.html) is not enabled in PAS. 
+By default external [TCP Routing](https://docs.pivotal.io/pivotalcf/opsguide/tcp-routing-ert-config.html) is not enabled in PAS.
 
-For details see [Configuring Routes and Domains](https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/routes-domains.html)
+Please read [Configuring Routes and Domains](https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/routes-domains.html) to gain an overall understanding of this topic.
 
 ## Internal TCP Routing
 
-Internal TCP routing uses `apps.internal`, which is not protocol-specific. 
+Internal TCP routing uses `apps.internal`, which is not protocol-specific.
 
 For more information see:
 
@@ -50,6 +50,7 @@ cf add-network-policy SOURCE-APP \
 5. **APPLY CHANGES**
 
 For additioanl information see:
+
 - [Configuring TCP Routing in PAS](https://docs.pivotal.io/pivotalcf/opsguide/tcp-routing-ert-config.html)
 
 ### Create an External Route
