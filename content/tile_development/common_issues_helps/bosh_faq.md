@@ -69,6 +69,13 @@ add:
 ```
 Redeploy, then you will now be able to ssh into the VM with `bosh ssh`.
 
+### Issue: How do I run a command on every VM in my cluster?
+
+- The following command will run on all vms:
+`bosh -e <env name> -d <deployment name> ssh -c "command"`
+If one needs to run as root:
+`bosh -e <env-name> -d <deployment-name> ssh -c "sudo sh -c 'command'"`
+
 ### Issue: My drain script is failing how do I recover?
 
 - Error: `Error: Action Failed get_task: Task <task-uuid> result: 1 of 1 drain scripts failed. Failed Jobs: <job-name>.`
