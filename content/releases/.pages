@@ -1,5 +1,7 @@
 arrange:
 - ...
+- pcf2_8_metrics.md
+- pks1_5.md
 - pcf2_7.md
 - pcf2_6.md
 - pcf2_5.md
