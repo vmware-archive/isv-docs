@@ -2,9 +2,9 @@
 
 Hello Pivotal Partners,
 
-* PCF 2.7 is scheduled for release in mid-September
+* PCF 2.7 has been released on [PivNet](https://network.pivotal.io/products/elastic-runtime#/releases/467372)
 
-With this release, we have a handful of changes that require attention from tile authors.
+With this release, we have a handful of changes that require attention from tile authors.  See the complete list of breaking changes in the [release notes](https://docs.pivotal.io/platform/2-7/pcf-release-notes/breaking-changes.html)
 
 PCF 2.4 release will move to End of General Support (EOGS) once PCF 2.7 is released.
 
