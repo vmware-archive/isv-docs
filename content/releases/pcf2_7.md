@@ -10,6 +10,18 @@ PCF 2.4 release will move to End of General Support (EOGS) once PCF 2.7 is relea
 
 ## PCF 2.7 Changes
 
+### Tile CI Configuration
+
+Some changes to Ops Manager 2.7 have impacted the tile configuration in our Tile CI system.
+Ops Manager has gotten more picky about the configuration it accepts.
+Here are two particular cases that have caused trouble:
+
+- Ops Manager will reject the configuration if it includes properties underneath unselected options of a selector type property.
+- Ops Manager will reject the configuration if it includes properties that have specified `configurable: false`.
+
+Tile CI will give you a list of offending properties when it tries to configure your tile.
+To fix the problem, navigate to the "Advanced" configuration tab for your tile, and simply remove the offending properties from the tile configuration.
+
 ### New GA Features
 
 #### Ops Manager
