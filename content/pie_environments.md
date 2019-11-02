@@ -12,9 +12,17 @@ for Pivotal Technical Partnership Program (PTPP) program members to develop thei
 ## Pivotal Container Service (PKS)
 
 To develop an integration with PKS, Pivotal can provide you with a dedicated PKS Kubernetes cluster.
-If you would like a development cluster, please fill out the
-[PKS Kubernetes Cluster request form](https://docs.google.com/forms/d/e/1FAIpQLSeM9Bopf8_PEc3CExuKn5XW-5BPvobGufbLtA6Gg7Zxn_d1rA/viewform).
-Once we process your request, we will send you access information via [Pivotal Partner Slack](https://pivotalpartners.slack.com/).
+If you would like a development cluster, please request access to the `PKS Clusters` Tab in Tile Dashboard via a message in you partner slack channel. (please note that this needs to be done after every time the PKS Environment gets replaced with a different name and you will only have access to create / remove a cluster, not to the opsmanager for this environment).
+
+After you got added you will see the tab like this:
+
+![Screenshot](img/pksctl_manage_clusters.png)
+
+From there you can copy the pks cli login string, view your clusters or create a new one where you can select the plans (please read their description) and adjust the worker node count (default=1).
+
+![Screenshot](img/pksctl_create_cluster.png)
+
+Please note that your cluster limit is 2, so you need to delete clusters if you need new ones.
 
 ## Pivotal Application Service (PAS)
 
