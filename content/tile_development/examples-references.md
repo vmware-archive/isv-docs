@@ -6,9 +6,9 @@ There is no guarantee all of these examples work. This aggregation of examples a
 
 If you discover an additional resource that would be useful or an outdated one please click the edit pencil near the top right and submit a Pull Request and we will he very thankful for your contribution.
 
-### [PCF Examples Repo](https://github.com/cf-platform-eng/pcf-examples)
+### [Pivotal Platform Examples Repo](https://github.com/cf-platform-eng/pcf-examples)
 
-[pcf-examples](https://github.com/cf-platform-eng/pcf-examples) contains examples of brokers, bosh addons, and tiles many of which start simple and build up into more complex examples.
+[pcf-examples](https://github.com/cf-platform-eng/pcf-examples) (now Pivotal Platform) contains examples of brokers, bosh addons, and tiles many of which start simple and build up into more complex examples.
 
 ### [Cloud Foundry Example Service Brokers](https://docs.cloudfoundry.org/services/examples.html)
 
@@ -26,7 +26,7 @@ Cloud Foundry Repositories described as a [Bosh Release](https://github.com/sear
 
 ### [ISV Tech Hub](https://isv-tech-hub.cfapps.io)
 
-[Documentaion and workshops](https://isv-tech-hub.cfapps.io) for registered[Pivotal Platform Partners](https://pivotal.io/partners/programs/tech) building service integrations to the [Pivotal Platform](https://docs.pivotal.io/platform/2-7/installing/pcf-docs.html) for Pivotal Application Service (PAS), Pivotal Container Service (PKS) or BOSH.
+[Documentaion and workshops](https://isv-tech-hub.cfapps.io) for registered [Pivotal Platform Partners](https://pivotal.io/partners/programs/tech) building service integrations to the [Pivotal Platform](https://docs.pivotal.io/platform/2-7/installing/pcf-docs.html) for Pivotal Application Service (PAS), Pivotal Container Service (PKS) or BOSH.
 
 ### [Pivotal Platform Tile Developers Guide](https://docs.pivotal.io/tiledev/index.html)
 
