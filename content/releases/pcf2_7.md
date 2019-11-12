@@ -1,14 +1,14 @@
-# PCF 2.7
+# Pivotal Platform 2.7
 
 Hello Pivotal Partners,
 
-* PCF 2.7 has been released on [PivNet](https://network.pivotal.io/products/elastic-runtime#/releases/467372)
+* Pivotal Application Service 2.7 has been released on [PivNet](https://network.pivotal.io/products/elastic-runtime#/releases/467372)
 
 With this release, we have a handful of changes that require attention from tile authors.  See the complete list of breaking changes in the [release notes](https://docs.pivotal.io/platform/2-7/pcf-release-notes/breaking-changes.html)
 
-PCF 2.4 release will move to End of General Support (EOGS) once PCF 2.7 is released.
+PAS 2.4 release will move to End of General Support (EOGS) once PAS 2.7 is released.
 
-## PCF 2.7 Changes
+## Pivotal Platform 2.7 Changes
 
 ### Tile CI Configuration
 
@@ -59,20 +59,20 @@ To fix the problem, navigate to the "Advanced" configuration tab for your tile, 
 * Replace `uaa.port` with `uaa.ssl.port` (**BREAKING CHANGE**)
   * UAA is disallowing incoming HTTP traffic from UAA to the OM, PAS, and PKS databases. UAA now only supports HTTPS and platform component teams will need to use uaa.ssl.port.
 * Deprecating the firehose
-  * Log Cache is replacing the firehose for logs, in the PCF 2.7 timeframe, the firehose should be considered deprecated.
+  * Log Cache is replacing the firehose for logs, in the PAS 2.7 timeframe, the firehose should be considered deprecated.
   * See the notice below for details.
 * Remove ETCD and Consul: Final mile to remove consul from all tiles
   * Final clean up for all teams to remove consul to remove tech debt and complexity from the platform
 
 ## Notice for Partners with Nozzles
 
-The v1 nozzle endpoint is being deprecated in December. v1 nozzles will not work after this date. This change will likely arrive in PCF version 2.8, which will likely be released in December 2019.
+The v1 nozzle endpoint is being deprecated in December. v1 nozzles will not work after this date. This change will likely arrive in PAS version 2.8, which will likely be released in December 2019.
 
 You may already be using the v2 API, we’re communicating this broadly to ensure that no partners are missed.
 
 To help with this transition, our team has built v2 API examples in the GitHub repository [firehose-nozzle-v2](https://github.com/cf-platform-eng/firehose-nozzle-v2). There are two ways of connecting: the Reverse Log Proxy (RLP) and the Reverse Log Proxy Gateway (RLP Gateway). We recommend using the Gateway, as the deployment and authentication model is simpler (a BOSH release isn’t required and the nozzle can be deployed as an app when using the RLP Gateway). The above repository contains code samples for both methods, but only packages the Gateway based solution into a tile.
 
-Reverse Log Proxy Gateway support was added in PCF 2.4.  Pivotal support policies (n-2 release) should allow this support to be widespread by the September release of PCF 2.7.
+Reverse Log Proxy Gateway support was added in PAS 2.4.  Pivotal support policies (n-2 release) should allow this support to be widespread by the September release of PAS 2.7.
 
 The payload will be slightly different, so translation into your system of record will require code changes. The [loggregator API documentation describes](https://github.com/cloudfoundry/loggregator-api/blob/master/README.md#v2---v1-mapping) a mapping between the v1 and v2 payload.
 
