@@ -1,68 +1,43 @@
-# Pivotal Platform 2.7
+# Pivotal Platform 2.8
 
 Hello Pivotal Partners,
 
-* Pivotal Application Service 2.7 has been released on [PivNet](https://network.pivotal.io/products/elastic-runtime#/releases/467372)
+* Pivotal Application Service 2.8 has been released on [PivNet](https://network.pivotal.io/products/elastic-runtime#/releases/467372)
 
-With this release, we have a handful of changes that require attention from tile authors.  See the complete list of breaking changes in the [release notes](https://docs.pivotal.io/platform/2-7/pcf-release-notes/breaking-changes.html)
+* With this release, we have a handful of changes that require attention from tile authors.  See the complete list of breaking changes in the [release notes](https://docs.pivotal.io/platform/2-8/pcf-release-notes/breaking-changes.html)
 
-PAS 2.4 release will move to End of General Support (EOGS) once PAS 2.7 is released.
+* PAS 2.5 release will move to End of General Support (EOGS) once PAS 2.8 is released.
 
-## Pivotal Platform 2.7 Changes
+* Pivotal Cloud Foundry (PCF) has been rebranded to Pivotal Platform. All partner docs repos have been rebranded. We ask partners update their own documentation and diagrams referring to ‘PCF’ or “Pivotal Cloud Foundry”
 
-### Tile CI Configuration
 
-Some changes to Ops Manager 2.7 have impacted the tile configuration in our Tile CI system.
-Ops Manager has become more selective about the configuration it accepts.
-Here are two particular cases that have caused trouble:
-
-- Ops Manager will reject the configuration if it includes properties underneath unselected options of a selector type property.
-- Ops Manager will reject the configuration if it includes properties that have specified `configurable: false`.
-
-Tile CI will give you a list of offending properties when it tries to configure your tile.
-To fix the problem, navigate to the "Advanced" configuration tab for your tile, and simply remove the offending properties from the tile configuration.
+## Pivotal Platform 2.8 Changes
 
 ### New GA Features
 
 #### Ops Manager
 
-* **[New Feature]**: BPM support in bosh, available in this Ops Manager.
-* **[New Feature]**: A user is able to see information for stemcells in the Pending Changes API
-  * Display all of the stemcell OS/Version information without keeping the existing stemcell_version key in a public-facing API
-* **[New Feature]**: Pivotal tiles present platform operators with a consistent syslog configuration form
-  * Certain tiles currently implement their own syslog (RFC 5426) config requiring Alana to enable logs in dozens of places, leading to missed logs.
-  * OpsMgr has created a form for consistency, and [tiles can opt into it](https://docs.pivotal.io/tiledevmigrating-syslog-configuration.html) provided they don't need additional fields.
+* Products can declare optional dependencies
+  * This will allow horizontal scaling by externalizing the session, but will increase the volume of database reads/writes. Sessions will be maintained in the event of UAA downtime.
+  
+* For tiles with 'collection' type properties, especially for service plans:
+  * [Platform Automation](https://network.pivotal.io/products/platform-automation/) for PCF requires a `name` field on collection elements in order to differentiate between updates to existing elements and deleting/adding an element. Please include a `name` field in your collection if this affects your functionality. See the related [GitHub issue](https://github.com/pivotal-cf/om/issues/207) for more details.
+  
+* Ops Manager will consume Maestro’s CLI
+  * Ops Manager will consume Maestro’s CLI to allow customers to complete a full rotation for all certificates managed by Ops Manager and CredHub in one single flow. BOSH property credhub.certificates.concatenate_cas will be set to true by default in 2.8.  This means that CAs will be returned concatenated, which means tiles must be configured to return concatenated CAs, and be able to handle concatenated CAs. For more details, please see [Maestro Tile Inspection](https://docs.google.com/document/d/1JBjkvKYbI4aOobX9lf-sqrnxhKYpJ8JLlsdOeYF-uPg/edit).
+  
+* Pivotal Tiles present Alana with a consistent syslog config form
+  * We've seen that customers don't enable logging until something goes wrong and this makes it easier for them to enable logging from the get-go.
 
-#### PAS
+  * If you are a tile team please use the default OpsMan form for enabling Syslog. This needs to be made available as part of each tile's configuration. (Note that even ODB teams can use the OpsMan form as of OM 2.6 
 
-### Features
+ ### Upcoming Deprecations
 
-* App developer can [run a sidecar](https://docs.run.pivotal.io/devguide/sidecars.html) as a first-class process in application instances.
-* On-Demand Service Broker Granular Upgrades
-  * Pivotal released "upgrade-one" for the on-demand broker which allows the operator to initiate a single-instance upgrade; useful for data services team
-    * [On-Demand Services SDK](https://docs.pivotal.io/svc-sdk/odb/0-31/management.html#upgrade-all-service-instances) documentation is being updated
-* Pivotal Tiles use compiled instead of non-compiled components so that updates don't surprise operators
-  * Speed: Tiles should use compiled packages so that updates are faster
-  * Stability: By using compiled components, Tiles that share commonly used component packages won't run into unnecessary VM updates across the entire foundation.
-
-### Beta Features
-
-#### Ops Manager
-
-* Operators using a Service Broker can see the Service Broker syslogs in Ops Manager.
-
-### Upcoming Deprecations
-
-* BOSH is removing support for v1 manifests (**BREAKING CHANGE**)
-  * v1 manifests will stop working in [BOSH DIR v270.0.0](https://github.com/cloudfoundry/bosh/releases/tag/v270.0.0) and this will be a **breaking change** for anyone still using v1 manifest.
-  * We do not expect this to affect most tiles as Ops Manager is responsible for BOSH manifest generation.
-* Replace `uaa.port` with `uaa.ssl.port` (**BREAKING CHANGE**)
-  * UAA is disallowing incoming HTTP traffic from UAA to the OM, PAS, and PKS databases. UAA now only supports HTTPS and platform component teams will need to use uaa.ssl.port.
-* Deprecating the firehose
-  * Log Cache is replacing the firehose for logs, in the PAS 2.7 timeframe, the firehose should be considered deprecated.
-  * See the notice below for details.
-* Remove ETCD and Consul: Final mile to remove consul from all tiles
-  * Final clean up for all teams to remove consul to remove tech debt and complexity from the platform
+* Firehose Deprecation
+  * Log Cache is replacing the firehose for logs, in the Pivotal Platform 2.7 timeframe, the firehose should be considered deprecated
+  * See the notice below for details. 
+  
+* Maestro's CLI will be consumed by Ops Manager
 
 ## Notice for Partners with Nozzles
 
