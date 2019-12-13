@@ -13,7 +13,7 @@ PAS 2.4 release will move to End of General Support (EOGS) once PAS 2.7 is relea
 ### Tile CI Configuration
 
 Some changes to Ops Manager 2.7 have impacted the tile configuration in our Tile CI system.
-Ops Manager has gotten more picky about the configuration it accepts.
+Ops Manager has become more selective about the configuration it accepts.
 Here are two particular cases that have caused trouble:
 
 - Ops Manager will reject the configuration if it includes properties underneath unselected options of a selector type property.
