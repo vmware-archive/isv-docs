@@ -7,6 +7,8 @@
 
 [PCF 2.7](./releases/pcf2_7.md)
 
+[Pivotal Platform 2.8](./releases/pcf2_8.md)
+
 ## Sites
 
 [ISV Tech Hub](https://isv-tech-hub.cfapps.io)
