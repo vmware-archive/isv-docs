@@ -10,7 +10,6 @@ Hello Pivotal Partners,
 
 * Pivotal Cloud Foundry (PCF) has been rebranded to Pivotal Platform. All partner docs repos have been rebranded. We ask partners update their own documentation and diagrams referring to ‘PCF’ or “Pivotal Cloud Foundry”
 
-
 ## Pivotal Platform 2.8 Changes
 
 ### New GA Features
@@ -18,28 +17,27 @@ Hello Pivotal Partners,
 #### Ops Manager
 
 * Products can declare optional dependencies
-  * This will allow horizontal scaling by externalizing the session, but will increase the volume of database reads/writes. Sessions will be maintained in the event of UAA downtime.
+    * This will allow horizontal scaling by externalizing the session, but will increase the volume of database reads/writes. Sessions will be maintained in the event of UAA downtime.
   
 * For tiles with 'collection' type properties, especially for service plans:
-  * [Platform Automation](https://network.pivotal.io/products/platform-automation/) for PCF requires a `name` field on collection elements in order to differentiate between updates to existing elements and deleting/adding an element. Please include a `name` field in your collection if this affects your functionality. See the related [GitHub issue](https://github.com/pivotal-cf/om/issues/207) for more details.
+    * [Platform Automation](https://network.pivotal.io/products/platform-automation/) for PCF requires a `name` field on collection elements in order to differentiate between updates to existing elements and deleting/adding an element. Please include a `name` field in your collection if this affects your functionality. See the related [GitHub issue](https://github.com/pivotal-cf/om/issues/207) for more details.
   
 * Ops Manager will consume Maestro’s CLI
-  * Ops Manager will consume Maestro’s CLI to allow customers to complete a full rotation for all certificates managed by Ops Manager and CredHub in one single flow. BOSH property credhub.certificates.concatenate_cas will be set to true by default in 2.8.  This means that CAs will be returned concatenated, which means tiles must be configured to return concatenated CAs, and be able to handle concatenated CAs. For more details, please see [Maestro Tile Inspection](https://docs.google.com/document/d/1JBjkvKYbI4aOobX9lf-sqrnxhKYpJ8JLlsdOeYF-uPg/edit).
+    * Ops Manager will consume Maestro’s CLI to allow customers to complete a full rotation for all certificates managed by Ops Manager and CredHub in one single flow. BOSH property credhub.certificates.concatenate_cas will be set to true by default in 2.8.  This means that CAs will be returned concatenated, which means tiles must be configured to return concatenated CAs, and be able to handle concatenated CAs. For more details, please see [Maestro Tile Inspection](https://docs.google.com/document/d/1JBjkvKYbI4aOobX9lf-sqrnxhKYpJ8JLlsdOeYF-uPg/edit).
   
 * Pivotal Tiles present Alana with a consistent syslog config form
-  * We've seen that customers don't enable logging until something goes wrong and this makes it easier for them to enable logging from the get-go.
+    * We've seen that customers don't enable logging until something goes wrong and this makes it easier for them to enable logging from the get-go.
+    * If you are a tile team please use the default OpsMan form for enabling Syslog. This needs to be made available as part of each tile's configuration. (Note that even ODB teams can use the OpsMan form as of OM 2.6
 
-  * If you are a tile team please use the default OpsMan form for enabling Syslog. This needs to be made available as part of each tile's configuration. (Note that even ODB teams can use the OpsMan form as of OM 2.6 
-
- ### Upcoming Deprecations
+### Upcoming Deprecations
 
 * Firehose Deprecation
-  * Log Cache is replacing the firehose for logs, in the Pivotal Platform 2.7 timeframe, the firehose should be considered deprecated
-  * See the notice below for details. 
+    * Log Cache is replacing the firehose for logs, in the Pivotal Platform 2.7 timeframe, the firehose should be considered deprecated
+    * See the notice below for details.
   
 * Maestro's CLI will be consumed by Ops Manager
 
-## Questions?
+## Questions
 
 Reach out to us on the Pivotal Partner Slack Team or at [ISV-TPM@pivotal.io](mailto:ISV-TPM@pivotal.io).  As a note, Jake Knotsman has rolled off to another team at Pivotal so direct your questions to Marina, Ted, or Andrew.
 
