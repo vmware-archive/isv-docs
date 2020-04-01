@@ -1,19 +1,21 @@
-### Breaking Changes
+# PKS 1.7
+
+## Breaking Changes
 
 Enterprise PKS v1.7.0 has the following breaking changes:
 
 
-#### **Removal of the Dashboard UI**
+### **Removal of the Dashboard UI**
 
 Clusters created with PKS v1.7 do not have Dashboard installed on creation. For more information, see the [Kubernetes Control Plane](https://docs-pcf-staging.cfapps.io/pks/1-7/release-notes.html#1-7-0-bosh-lifecycle) section.
 
 
-#### **Removal of API Version Definitions in Kubernetes v1.16**
+### **Removal of API Version Definitions in Kubernetes v1.16**
 
 The bump to Kubernetes v1.16 removes some API version definitions in favor of newer, more stable definitions. This change may break some integrations, controllers, and pipelines. For more information, see the [Kubernetes Control Plane](https://docs-pcf-staging.cfapps.io/pks/1-7/release-notes.html#1-7-0-bosh-lifecycle) section.
 
 
-#### **Enterprise PKS Database Migration**
+### **Enterprise PKS Database Migration**
 
 This release migrates the Enterprise PKS control plane database from the PKS API VM to a new instance group, PKS Database.
 
@@ -24,12 +26,12 @@ To upgrade to Enterprise PKS v1.7, follow the instructions in [Upgrading Enterpr
 These topics contain important preparation and upgrade configuration steps you must follow before and during your upgrade to v1.7.
 
 
-### Known Issues
+## Known Issues
 
 Enterprise PKS v1.7.0 has the following known issues:
 
 
-#### 502 Bad Gateway After OIDC Login
+### 502 Bad Gateway After OIDC Login
 
 **Symptom**
 
@@ -44,7 +46,7 @@ A large response header has exceeded your NSX-T load balancer maximum response h
 If you experience this issue, manually reconfigure your NSX-T `request_header_size` and `response_header_size` to 50,000 characters. For information about configuring NSX-T default header sizes, see [OIDC Response Header Overflow](https://community.pivotal.io/s/article/OIDC-Response-Header-overflow) in the Knowledge Base.
 
 
-#### One Plan ID Longer than Other Plan IDs
+### One Plan ID Longer than Other Plan IDs
 
 **Symptom**
 
@@ -61,7 +63,7 @@ You can safely configure and use **Plan 4**. The length of the **Plan 4** ID doe
 If you require all plan IDs to have identical length, do not activate or use **Plan 4**.
 
 
-#### NSX-T Pre-Check Errand Fails Due to Edge Node Configuration
+### NSX-T Pre-Check Errand Fails Due to Edge Node Configuration
 
 **Symptom**
 
@@ -76,7 +78,7 @@ The NSX-T Pre-Check Errand is erroneously returning the “_cpu cores is less th
 You can safely configure your NSX-T Edge Node VMs as `medium` size and ignore the error.
 
 
-#### Metrics Server uses Weak Ciphers
+### Metrics Server uses Weak Ciphers
 
 The `metrics-server` component communicates over TLS v1.2 with weak ciphers. All other `vars.product_short` components use TLS v1.2 with strong ciphers.
 
