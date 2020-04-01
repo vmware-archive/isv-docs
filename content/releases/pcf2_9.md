@@ -74,7 +74,7 @@
 
 ## Notice for Partners with Nozzles: {#notice-for-partners-with-nozzles}
 
-The v1 nozzle endpoint is being deprecated in March. v1 nozzles will not work after this date.
+The v1 nozzle endpoint is being deprecated in 2.10. v1 nozzles will not work after this date.
 
 You may already be using the v2 API, we’re communicating this broadly to ensure that no partners are missed.
 
