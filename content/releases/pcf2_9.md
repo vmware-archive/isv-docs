@@ -18,9 +18,9 @@
 
 *   **Buildpack changes**
     *   These are changes to the buildpacks shipped by default in Pivotal Platform 2.9:
-            *   Support for Node 8.0 removed
-            *   Python 2.7 removed
-            *   .Net-runtime v3.x removed
+        *   Support for Node 8.0 removed
+        *   Python 2.7 removed
+        *   .Net-runtime v3.x removed
 
 *   **Products can declare optional dependencies**
     *   OpsManager will provide:
