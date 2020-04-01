@@ -78,7 +78,7 @@ You can safely configure your NSX-T Edge Node VMs as `medium` size and ignore th
 
 #### Metrics Server uses Weak Ciphers
 
-The `metrics-server` component communicates over TLS v1.2 with weak ciphers. All other &lt;%= vars.product_short % components use TLS v1.2 with strong ciphers.
+The `metrics-server` component communicates over TLS v1.2 with weak ciphers. All other `vars.product_short` components use TLS v1.2 with strong ciphers.
 
 **Forward Looking Statement**
 
