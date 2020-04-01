@@ -3,11 +3,9 @@
 
 ## What's new
 
-[PKS 1.5](./releases/pks1_5.md)
+[PKS 1.7](./releases/pks1_7.md)
 
-[PCF 2.7](./releases/pcf2_7.md)
-
-[Pivotal Platform 2.8](./releases/pcf2_8.md)
+[Pivotal Platform 2.9](./releases/pcf2_9.md)
 
 ## Sites
 
