@@ -10,7 +10,7 @@
 
 Installing PAS for Windows requires downloading and uploading several GB of files so it often is faster to execute the process directly on the Ops Manager VM.
 
-> Note: If you have fast internet, feel free to follow [Installing and Configuring PASW](https://docs.pivotal.io/pivotalcf/current/windows/installing.html)
+> Note: If you have fast internet, feel free to follow [Installing and Configuring PASW](https://docs.pivotal.io/platform/application-service-windows/2-9/installing.html)
 
 1. SSH into the Ops Manager using [hammer cli](https://github.com/pivotal/hammer)
    - `hammer -t <my-env>.hammer.json ssh opsman`
@@ -30,7 +30,7 @@ Installing PAS for Windows requires downloading and uploading several GB of file
    3. `./pivnet pfs -p pas-windows -r 2.6.1`
 6. Download both **PAS for Windows** and **Windows FS Injector** using:
    - `./pivnet dlpf -p <slug> -r <release> -i <product-file-id>`
-7. Build and [Install the tile](https://docs.pivotal.io/pivotalcf/current/windows/installing.html)
+7. Build and [Install the tile](https://docs.pivotal.io/platform/application-service-windows/2-9/installing.html)
    1. `unzip winfs-injector-<version>.zip`
    2. `chmod +x winfs-injector-linux`
    3. `./winfs-injector-linux --input-tile pas-windows-<version>-build.<build>.pivotal --output-tile PAS-WINDOWS-INJECTED.pivotal`
@@ -40,8 +40,8 @@ Installing PAS for Windows requires downloading and uploading several GB of file
        - Note: Ops Manger verify the file before responding
    5. Login to the Ops Manager web application and import _Pivotal Application Service for Windows_ by clicking the **+** button.
 8. Ensure the BOSH Master Compilation Job has enough resources, as described above.
-9. Continue on with [Step 3: Configure the Tile](https://docs.pivotal.io/pivotalcf/current/windows/installing.html#config)
-   1. At [Step 5: Upload a Stemcell](https://docs.pivotal.io/pivotalcf/current/windows/installing.html#stemcells) go to [Pivotal Network: Stemcells for PCF (Windows)](https://network.pivotal.io/products/stemcells-windows-server) and download the light stemcell required.
+9. Continue on with [Step 3: Configure the Tile](https://docs.pivotal.io/platform/application-service-windows/2-9/installing.html#config)
+   1. At [Step 5: Upload a Stemcell](https://docs.pivotal.io/platform/application-service-windows/2-9/installing.html#stemcells) go to [Pivotal Network: Stemcells for PCF (Windows)](https://network.pivotal.io/products/stemcells-windows-server) and download the light stemcell required.
        - For most shared partner environments the **GCP light Stemcell**
 
 ## Troubleshooting
