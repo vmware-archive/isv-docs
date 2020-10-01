@@ -1,7 +1,5 @@
 # ISV Docs
 
-View the ISV documentation here - https://cf-platform-eng.github.io/isv-docs
-
 [Adding Content](#content)  
 [Running and Testing](#running)
 [Pipeline](#pipeline)  
